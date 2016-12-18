@@ -1,0 +1,160 @@
+ %------------------------------% 
+                                % Manhattan College Math Dept  %
+                                % Student Homework Template v1 %
+                                %    R. Goldstone, 1/1/2011    % 
+                                %------------------------------%
+                                
+                           %---------------------------------------%
+                           %        Edited by K. Peter Krog        %
+                           % Marist College Mathematics Department %
+                           %              11/18/2014               %
+                           %---------------------------------------%
+                            
+% PREAMBLE ============================================================================
+
+ \documentclass[12pt]{article}
+ \usepackage[utf8]{inputenc}         % set input encoding so bullets are printed
+ \usepackage{amssymb,amsmath,amsthm,graphicx} % libraries of additional mathematics and graphics commands 
+   
+% FILL-IN, THEN GO TO DOCUMENT MAIN BODY **********************************************
+ \newcommand{\myname}{Jack Barry} % Enter name
+ \newcommand{\duedate}{September 6th, 2016}           % Enter date, e.g., 1 April
+ \newcommand{\courseno}{CMPT 404}                % Enter course number (just the number)
+ \newcommand{\coursename}{AI}              % Enter course name 
+ \newcommand{\assignumber}{Homework 0}             % Enter assignment number
+ \newcommand{\problist}{}                % Enter exercise references
+ \newcommand{\spacingfactor}{2}           % Enter spacing factor for responses
+% END FILL-IN *************************************************************************
+
+% DOCUMENT STRUCTURES -----------------------------------------------------------------
+
+% PAGES 
+ \usepackage[paper=letterpaper, margin=1in, headheight=1in, headsep=0.25in]{geometry} 
+       % set margins and space for headers
+ 
+ \newcommand{\firstpageinfo}         % creates title header on first page
+   {\textsf{\large\myname}\hfill \courseno\ \coursename\\
+   \assignumber \hfill \duedate}
+% END PAGES
+
+% HEADERS AND FOOTERS
+ \usepackage{fancyhdr}               %used to create headers and footers for pages
+       
+ \pagestyle{fancy}                   % Headers and footers for page 2 and beyond
+   \lhead{\textit{\myname}}
+   \chead{\textit{\courseno}}
+   \rhead{\textit{\textit{\assignumber}}}
+   \cfoot{\textit{\thepage}}
+   \renewcommand{\headrulewidth}{0.4pt} 
+% END HEADERS AND FOOTERS
+
+% PROBLEM AND RESPONSE ENVIRONMENTS
+ \usepackage{setspace}               % allows for doublespacing
+ \usepackage{ifthen}                 % used to create response environment
+
+ \newcommand\myqed{}                 % creates command for tombstone at end of proof
+ \newcommand{\printmyqed}[1][]       % decides whether to print tombstone or not
+   {%
+   \ifthenelse{\equal{#1}{Proof}}
+   {\renewcommand{\myqed}{\qed}}
+   {\renewcommand{\myqed}{}}
+   }
+
+ \newenvironment{exercise}[1][]{%
+   \bigskip                          % Space before problem statement
+   \noindent \textsf{Exercise #1.\quad}\slshape }{}
+     
+ \newenvironment{response}[1][\textit{Solution}]{%
+   \printmyqed[#1]
+   \begin{spacing}{\spacingfactor}
+   \medskip                          % Space before solution 
+   \noindent \textit{#1.\quad}}{\myqed\end{spacing}\medskip\hrule}
+
+% END PROBLEM AND RESPONSE ENVIRONMENTS
+
+% END DOCUMENT STRUCTURES -------------------------------------------------------------
+
+% BLACKBOARD BOLD NUMBER SYSTEM COMMANDS
+ \newcommand{\R}{\mathbb{R}}
+ \newcommand{\C}{\mathbb{C}}
+ \newcommand{\Z}{\mathbb{Z}}
+ \newcommand{\Q}{\mathbb{Q}}
+ \newcommand{\N}{\mathbb{N}}
+ \newcommand{\zmod}[1]{\Z_{#1}}      % Type \zmod{m} to get integers modulo m
+ \newcommand{\F}{\mathbb{F}}         % For generic field symbol
+ \newcommand{\QQ}{\mathbb{H}}        % For the quaternions
+% END BLACKBOARD BOLD NUMBER SYSTEM COMMANDS
+
+% END PREAMBLE 
+
+% =====================================================================================
+% =====================================================================================
+
+% DOCUMENT MAIN BODY
+%
+% Use \begin{problem}[problem reference]...\end{problem} 
+% to enter a problem statement.
+%
+% Use \begin{response}...\end{response} to enter your solution.
+% You can change the default label "Solution" to something else 
+% by typing \begin{response}[New label]...\end{response}.
+
+\begin{document}
+\thispagestyle{empty}
+
+% TOP MATTER --------------------------------------------------------------------------
+ \noindent\firstpageinfo\smallskip
+ \begin{center} \underline{\textsf{Exercise List}}\\[5pt] \problist \end{center}
+ \medskip\hrule
+% END TOP MATTER ----------------------------------------------------------------------
+
+\begin{exercise}[1] % Put exercise reference inside the brackets
+\end{exercise}
+
+\begin{response}[Solution]
+The way to solve for values of $x$ that maximize the function, $g(x)$ is to find the derivative of $g(x)$ and to then set the derivative equal to 0 and solve. This is becuase the derivative represents the functions slope and when the slop is zero there is a relative maximum or relative minimum, to check for these we plug back in the values we get for solving $g'(x) = 0$ into $g(x)$ and check the results. In this case we see that $g'(x) = -6x^2 + 24 = 0$ when we solve for $x$ we see that we get $x=4$ where $g(4) = 48$.
+\end{response}
+
+%--------------------------------------------------------------------------------------
+
+\begin{exercise}[2] % Put exercise reference inside the brackets
+\end{exercise}
+
+\begin{response}
+To find the partial derivatives of $f(x)$ with respect to $xo$ and $x1$ we basically find the derivative of $f(x)$ while treating the variable we are not solving with respect to as a constant. This yields us the following result. $f(x)$ with respect to $xo = 9xo^2 - 2x1^2$ and $f(x)$ with respect to $x1 = 4- 4xo*x1$
+\end{response}
+
+\begin{exercise}[3] % Put exercise reference inside the brackets
+\end{exercise}
+
+\begin{response}[Solution]
+These matrices cannot be multiplied together, the number of columns of the matrix on the left must be equal to the number of rows of the matrix on the right. Here we have a $[2x3] * [2x3]$
+When you take the transpose of A you get a 3x2 matrix that can be multiplied by the 2x3 matrix, B. The result of this multiplication is the matrix $A^t * B = [-2 , -2, 11; -8 , -1 , 23; 6,  -3 , -6]$ the rank of this result matrix is 3 because all three rows are linearly independent.
+\end{response}
+
+\begin{exercise}[4]
+\end{exercise}
+
+\begin{response}[Solution]
+Simple Gaussian also called the normal distribution is a continuous probability distribution. It is important for our purposed when we are referring to random variables because if an event is the sum of other random events then it will follow the normal distribution. The Multivariate Gaussian distribution is can be simply thought of as the normal distribution for k-variate events. The bernoulli distribution is the probability distribution of a random variable which takes a value of 1 for probability of success and a value of 0 for probability of failure, it is only appropriate in random events with binary outcomes. The binomial distribution is the discrete probability distribution of the number of successes in a sequence of independent events. The Exponential distribution is the probability distribution that describes the time between events in a poisson process or a process in which events occur continuously and independently at a constant average rate. 
+\end{response}
+
+\begin{exercise}[6]
+\end{exercise}                                                                            
+\begin{response}[Solution]
+I am unfamiliar with your notation ~N(2,3) for the expected value. However expected value is a sort of predicted cumulative average, I am familiar with the process of finding the expected value for a series of independent events with a finite number of outcomes. For example rolling a six sided die 3 times.
+\end{response}
+
+\begin{exercise}[7 and 8]
+\end{exercise}                                                                            
+\begin{response}[Solution]
+I joined the class on Friday afternoon so I would just need a few more days if I was going to familiarize myself with the notation and concepts these problems require an understanding of.
+\end{response}
+
+
+%--------------------------------------------------------------------------------------
+
+
+\end{document}  
+
+% END DOCUMENT MAIN BODY
